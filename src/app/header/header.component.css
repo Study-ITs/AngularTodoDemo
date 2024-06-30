@@ -1,0 +1,11 @@
+.header-frame {
+    background-color: white;
+    border-bottom: 1px solid #808080;
+    margin: 0px;
+    padding: 12px 0px 12px 0px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-left: 32px;
+}

@@ -1,0 +1,30 @@
+.content {
+    display: flex;
+}
+
+.nav-content {
+    min-width: auto;
+}
+
+.main-content {
+    width: 100%;
+    padding: 40px;
+}
+
+.form-content {
+    width: 100%;
+}
+
+.todolist-content {
+    display: flex;
+    margin-top: 32px;
+    width: 100%;
+}
+
+.todolist-group {
+    flex: 16;
+}
+
+.todolist-group-margin {
+    flex: 1;
+}

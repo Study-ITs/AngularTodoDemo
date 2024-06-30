@@ -1,0 +1,25 @@
+.todo-frame {
+    padding: 6px 32px 6px 40px;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    border: 1px solid #808080;
+    border-radius: 3px;
+}
+
+.todo-text {
+    margin: 4px;
+}
+
+.todo-status {
+    background-color: rgb(226, 97, 97);
+    padding: 4px 0px 4px 0px;
+    border-radius: 20px;
+    width: 120px;
+    margin: 0 0 0 auto;
+}
+
+.todo-status p {
+    color: white;
+    text-align: center
+}

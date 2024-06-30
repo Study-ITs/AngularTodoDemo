@@ -1,0 +1,13 @@
+p {
+    font-size: 20px;
+    padding: 16px;
+    padding-left: 30px;
+    border-bottom: 1px solid #808080;
+}
+
+.nav-frame {
+    background-color: white;
+    border-right: 1px solid #808080;
+    height: 1500px;
+    width: 250px;
+}

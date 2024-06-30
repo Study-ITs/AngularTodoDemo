@@ -1,0 +1,19 @@
+h2 {
+    font-size: 24px;
+}
+
+.todolist-frame {
+    background-color: white;
+    border: 1px solid #808080;
+    padding: 16px 40px 16px 40px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.todo-group {
+    margin-top: 16px;
+}
+
+.todo {
+    margin-bottom: 4px;
+}
