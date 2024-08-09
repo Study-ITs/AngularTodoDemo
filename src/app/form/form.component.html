@@ -1,8 +1,8 @@
 <div class="form-fream">
-    <form class="form-content">
-        <input class="form-text-area" type="text" name="add-todo" id="add-todo" required />
+    <form class="form-content" (submit)="addTodo()">
+        <input class="form-text-area" type="text" [(ngModel)]="newTodoTitle" name="todoTitle" placeholder="New todo" />
         <div class="add-todo-button">
-            <input type="submit" value="追加" />
+            <button type="submit">追加</button>
         </div>
     </form>
 </div>

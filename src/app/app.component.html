@@ -6,7 +6,7 @@
   <div class="main-content">
 
     <div class="form-content">
-      <app-form></app-form>
+      <app-form (add)="addTodoToList($event)"></app-form>
     </div>
 
     <div class="todolist-content">
@@ -20,7 +20,7 @@
       </div>
       <div class="todolist-group-margin"></div>
       <div class="todolist-group">
-        <app-todolist></app-todolist>
+        <app-todolist [todos]="todos"></app-todolist>
       </div>
     </div>
   </div>

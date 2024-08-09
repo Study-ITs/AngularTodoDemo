@@ -1,8 +1,8 @@
 <div class="todolist-frame">
     <h2>やることリスト Title</h2>
-    <div class="todo-group" *ngFor="let item of items">
+    <div class="todo-group" *ngFor="let todo of todos">
         <div class="todo">
-            <app-todo [todotitle]="item.title" [status]="item.status"></app-todo>
+            <app-todo [todo]="todo"></app-todo>
         </div>
     </div>
 </div>
