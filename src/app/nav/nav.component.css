@@ -44,4 +44,12 @@ h2 {
     font-size: 16px;
     box-sizing: border-box;
 }
+
+.edit-project-input {
+    width: calc(100% - 24px);
+    margin: 12px;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
   

@@ -3,17 +3,28 @@
     <div 
       class="nav-item" 
       *ngFor="let project of projects" 
-      [class.selected]="project.id === selectedProjectId" 
-      (click)="selectProject(project.id)">
-      {{ project.name }}
+      [class.selected]="project.id === selectedProjectId"
+      (click)="selectProject(project.id)"
+      (dblclick)="startEditingProject(project)"> <!-- ダブルクリックで編集開始 -->
+      
+      <span *ngIf="editingProjectId !== project.id">{{ project.name }}</span> <!-- 編集中でない場合は名前を表示 -->
+      
+      <!-- 編集中の入力フィールド -->
+      <input 
+        *ngIf="editingProjectId === project.id" 
+        #editProjectInput 
+        type="text" 
+        class="edit-project-input" 
+        [(ngModel)]="newProjectName"
+        (blur)="onBlur()" 
+        (keydown.enter)="saveEditedProjectName()"
+        placeholder="プロジェクト名を入力">
     </div>
   
-    <!-- プロジェクト追加ボタン -->
     <div class="nav-item add-project" (click)="startAddingProject()" *ngIf="!isAddingProject">
       + プロジェクト追加
     </div>
   
-    <!-- プロジェクト名入力フィールド -->
     <div *ngIf="isAddingProject">
       <input 
         #newProjectInput

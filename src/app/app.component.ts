@@ -19,10 +19,9 @@ export class AppComponent {
 
   constructor(private projectService: ProjectService) {}
 
-  title = 'angular-todo';
-
   ngOnInit(): void {
     this.fetchProjects();
+    this.projectService.loadProjects();
 
     this.projectService.selectedProjectId$.subscribe(projectId => {
       if (projectId !== null) {

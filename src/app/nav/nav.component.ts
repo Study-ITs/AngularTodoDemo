@@ -23,10 +23,12 @@ export class NavComponent {
   selectedProjectId: number | null = null;
   newProjectName: string = 'プロジェクト';
   isAddingProject: boolean = false;
+  editingProjectId: number | null = null; // プロジェクト名を編集中のID
 
   @Output() projectSelected = new EventEmitter<number>();
 
   @ViewChild('newProjectInput', { static: false }) newProjectInput!: ElementRef;
+  @ViewChild('editProjectInput', { static: false }) editProjectInput!: ElementRef; // 編集用の入力フィールドを参照
 
   constructor(
     private projectService: ProjectService,
@@ -50,7 +52,7 @@ export class NavComponent {
       if (this.newProjectInput) {
         this.renderer.selectRootElement(this.newProjectInput.nativeElement).focus();
       }
-    }, 0); // フォーカスを設定
+    }, 0);
   }
 
   addProject(): void {
@@ -70,6 +72,30 @@ export class NavComponent {
   onBlur(): void {
     if (this.isAddingProject) {
       this.addProject();
+    } else if (this.editingProjectId !== null) {
+      this.saveEditedProjectName();
+    }
+  }
+
+  startEditingProject(project: Project): void {
+    this.editingProjectId = project.id;
+    this.newProjectName = project.name;
+    setTimeout(() => {
+      if (this.editProjectInput) {
+        this.renderer.selectRootElement(this.editProjectInput.nativeElement).focus();
+      }
+    }, 0);
+  }
+
+  saveEditedProjectName(): void {
+    if (this.newProjectName.trim() && this.editingProjectId !== null) {
+      const project = this.projects.find(p => p.id === this.editingProjectId);
+      if (project) {
+        project.name = this.newProjectName;
+        this.projectService.updateProject(project); // サービスを通してサーバーに変更を保存
+      }
+      this.editingProjectId = null;
+      this.newProjectName = '';
     }
   }
 }
