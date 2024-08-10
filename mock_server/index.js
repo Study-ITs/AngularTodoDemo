@@ -85,6 +85,25 @@ app.put('/projects/:id', (req, res) => {
   }
 });
 
+// プロジェクトの削除
+app.delete('/projects/:id', (req, res) => {
+    if (fs.existsSync(PROJECT_FILE)) {
+      let projects = JSON.parse(fs.readFileSync(PROJECT_FILE));
+      const projectIndex = projects.findIndex(p => p.id == req.params.id);
+  
+      if (projectIndex !== -1) {
+        projects.splice(projectIndex, 1);
+        fs.writeFileSync(PROJECT_FILE, JSON.stringify(projects, null, 2));
+        res.json({ message: 'Project deleted' });
+      } else {
+        res.status(404).send('Project not found');
+      }
+    } else {
+      res.status(404).send('No project file found');
+    }
+  });
+  
+
 // サーバーを起動
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

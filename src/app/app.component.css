@@ -15,7 +15,7 @@
     height: calc(100vh - 65px);
     width: 250px;
     min-width: auto;
-    overflow-y: auto;
+
 }
 
 .main-content {

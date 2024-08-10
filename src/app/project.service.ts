@@ -52,4 +52,13 @@ export class ProjectService {
     }).then(response => response.ok ? console.log(`${method} successful`) : console.error(`${method} failed`))
       .catch(console.error);
   }
+
+  deleteProject(projectId: number): void {
+    this.projects = this.projects.filter(project => project.id !== projectId);
+    fetch(`http://localhost:3000/projects/${projectId}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.ok ? console.log('Delete successful') : console.error('Delete failed'))
+      .catch(console.error);
+  }  
 }

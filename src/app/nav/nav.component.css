@@ -4,7 +4,7 @@ h2 {
 }
 
 .nav-list {
-    background: linear-gradient(to bottom, #ffffff, #6E7BC7);
+    background: linear-gradient(to bottom, #F7F9FC, #70A3D8);
     border-right: solid 1px #808080;
     height: 100%;
     width: 100%;
@@ -12,12 +12,16 @@ h2 {
 }
 
 .nav-item {
+    position: relative; /* 位置指定のため追加 */
     cursor: pointer;
     padding: 12px;
     font-size: 18px;
     border-bottom: 1px solid #e0e0e0;
     min-height: 48px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-item:hover {
@@ -25,7 +29,7 @@ h2 {
 }
 
 .nav-item.selected {
-    background-color: #3f51b5;
+    background-color: #1469C0;
     color: white;
 }
 
@@ -37,14 +41,7 @@ h2 {
     border-top: 1px solid #e0e0e0;
 }
 
-.new-project-input {
-    width: calc(100% - 24px);
-    margin: 12px;
-    padding: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
+.new-project-input,
 .edit-project-input {
     width: calc(100% - 24px);
     margin: 12px;
@@ -52,4 +49,40 @@ h2 {
     font-size: 16px;
     box-sizing: border-box;
 }
-  
+
+.menu {
+    position: relative;
+    cursor: pointer;
+    padding: 0px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-options {
+    position: absolute;
+    top: 0px;
+    left: 120%; /* 親要素の右側に表示 */
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000; /* z-indexを調整 */
+    width: 64px;
+    color: black;
+}
+
+.menu-options div {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: white;
+}
+
+.menu-options div:last-child {
+    color: red;
+}
+
+.menu-options div:hover {
+    background-color: #dcdcdc;
+}
