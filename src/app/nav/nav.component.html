@@ -1,7 +1,11 @@
 <div class="nav-list">
-  <h2>Projects</h2>
-  <div class="nav-item" *ngFor="let project of projects" (click)="selectProject(project.id)">
-    {{ project.name }}
-  </div>
+    <h2>プロジェクト一覧</h2>
+    <div 
+      class="nav-item" 
+      *ngFor="let project of projects" 
+      [class.selected]="project.id === selectedProjectId" 
+      (click)="selectProject(project.id)">
+      {{ project.name }}
+    </div>
 </div>
-
+  

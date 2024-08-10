@@ -1,18 +1,8 @@
-.header-frame {
-    background-color: white;
-    border-bottom: 1px solid #808080;
-    margin: 0px;
-    padding: 12px 0px 12px 0px;
-}
-
-h1 {
-    font-size: 24px;
-    margin-left: 32px;
-}
-
 mat-toolbar {
-    font-size: 24px; /* フォントサイズを大きくして目立たせる */
-    padding: 16px;   /* パディングを追加して高さを出す */
-    background-color: #3f51b5; /* プライマリカラーに合わせて変更 */
-    color: white; /* テキストを白に設定 */
-  }
+    font-size: 24px;
+    padding: 16px;
+    background-color: #ffffff;
+    color: #3f51b5;
+    border-bottom: solid 1px #808080;
+    height: 100%;
+}

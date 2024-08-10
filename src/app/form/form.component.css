@@ -1,29 +1,26 @@
 .form-frame {
-    border: 1px solid #808080;
-    padding: 20px;
-    border-radius: 3px;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-  }
-  
-  .form-content {
+}
+
+.form-content {
     display: flex;
     align-items: center;
-  }
-  
-  .form-text-area {
+}
+
+.form-text-area {
     border: 1px solid #808080;
     font-size: 24px;
     padding: 8px;
     min-width: 500px;  /* 横幅を固定 */
     box-sizing: border-box;
-  }
-  
-  .add-todo-button {
+}
+
+.add-todo-button {
     margin-left: 30px;
     height: 43px;
     line-height: 36px;
     border-radius: 4px;
-  }
+}
   
