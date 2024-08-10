@@ -9,3 +9,10 @@ h1 {
     font-size: 24px;
     margin-left: 32px;
 }
+
+mat-toolbar {
+    font-size: 24px; /* フォントサイズを大きくして目立たせる */
+    padding: 16px;   /* パディングを追加して高さを出す */
+    background-color: #3f51b5; /* プライマリカラーに合わせて変更 */
+    color: white; /* テキストを白に設定 */
+  }

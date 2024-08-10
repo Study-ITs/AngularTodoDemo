@@ -1,25 +1,29 @@
-.form-fream {
+.form-frame {
     border: 1px solid #808080;
     padding: 20px;
     border-radius: 3px;
-}
-
-.form-content {
     display: flex;
-    margin: 0 auto;
-    max-width: 500px;
-}
-
-.form-text-area {
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  .form-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-text-area {
     border: 1px solid #808080;
     font-size: 24px;
-}
-
-.add-todo-button {
-    padding: 6px;
-    color: white;
-    background-color: #e26161;
-    border-radius: 3px;
-    border: 1px solid #808080;
-    margin-left: 20px;
-}
+    padding: 8px;
+    min-width: 500px;  /* 横幅を固定 */
+    box-sizing: border-box;
+  }
+  
+  .add-todo-button {
+    margin-left: 30px;
+    height: 43px;
+    line-height: 36px;
+    border-radius: 4px;
+  }
+  

@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 export interface Project {
   id: number;
@@ -10,7 +12,7 @@ export interface Project {
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatListModule, MatIconModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })

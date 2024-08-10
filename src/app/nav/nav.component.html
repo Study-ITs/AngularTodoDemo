@@ -1,9 +1,7 @@
-<div class="nav-frame">
-    <li *ngFor="let project of projects" (click)="selectProject(project.id)">
-        <p>{{ project.name }}</p>
-    </li>
-    <div>
-        <p>+ プロジェクト追加</p>
-    </div>
+<div class="nav-list">
+  <h2>Projects</h2>
+  <div class="nav-item" *ngFor="let project of projects" (click)="selectProject(project.id)">
+    {{ project.name }}
+  </div>
 </div>
 

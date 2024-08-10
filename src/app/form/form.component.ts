@@ -1,14 +1,16 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { ProjectService } from '../project.service';
 import { TodolistComponent, Todo } from '../todolist/todolist.component';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MatInputModule, MatButtonModule],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.css'
+  styleUrls: ['./form.component.css']
 })
 export class FormComponent {
   newTodoTitle = '';

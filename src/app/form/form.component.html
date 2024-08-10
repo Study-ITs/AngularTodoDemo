@@ -1,8 +1,7 @@
-<div class="form-fream">
+<div class="form-frame">
     <form class="form-content" (submit)="addTodo()">
-        <input class="form-text-area" type="text" [(ngModel)]="newTodoTitle" name="todoTitle" placeholder="New todo" />
-        <div class="add-todo-button">
-            <button type="submit">追加</button>
-        </div>
+      <input class="form-text-area" placeholder="New todo" [(ngModel)]="newTodoTitle" name="todoTitle">
+      <button mat-flat-button color="primary" class="add-todo-button">追加</button>
     </form>
-</div>
+  </div>
+  

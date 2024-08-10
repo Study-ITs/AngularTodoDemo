@@ -21,5 +21,6 @@
 
 .todo-status p {
     color: white;
-    text-align: center
+    text-align: center;
+    margin: 0px;
 }
