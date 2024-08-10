@@ -1,3 +1,10 @@
+h1 {
+    font-size: 24px;
+    padding: 20px 0px 20px 32px;
+    color: #3f51b5;
+    font-weight:bold;
+}
+
 h2 {
     font-size: 16px;
     margin: 0px 0px 0px 12px;
@@ -14,10 +21,10 @@ h2 {
 .nav-item {
     position: relative; /* 位置指定のため追加 */
     cursor: pointer;
-    padding: 12px;
-    font-size: 18px;
+    padding: 0px 0px 0px 40px;
+    font-size: 16px;
     border-bottom: 1px solid #e0e0e0;
-    min-height: 48px;
+    min-height: 42px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;

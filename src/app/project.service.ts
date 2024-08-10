@@ -19,8 +19,17 @@ export class ProjectService {
     this.selectedProjectIdSource.next(projectId);
   }
 
+  getSelectedProjectId(): number {
+    return this.selectedProjectIdSource.getValue();
+  }
+
   getProjects(): Project[] {
     return this.projects;
+  }
+
+  getProjectNameById(projectId: number): string | null {
+    const project = this.projects.find(p => p.id === projectId);
+    return project ? project.name : null;
   }
 
   loadProjects(): void {

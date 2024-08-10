@@ -1,4 +1,5 @@
 <div class="nav-list">
+    <h1>Angular Todo</h1>
     <h2>プロジェクト一覧</h2>
     <div 
       class="nav-item" 
@@ -33,14 +34,14 @@
     </div>
   
     <div *ngIf="isAddingProject">
-      <input 
-        #newProjectInput
-        type="text" 
-        class="new-project-input" 
-        [(ngModel)]="newProjectName"
-        (blur)="addProject()"
-        (keydown.enter)="addProject()"
-        placeholder="プロジェクト名を入力">
+        <input 
+          #newProjectInput
+          type="text" 
+          class="new-project-input" 
+          [(ngModel)]="newProjectName"
+          (blur)="addProject()"
+          (keydown.enter)="addProject()"
+          placeholder="プロジェクト名を入力">
     </div>
   </div>
   

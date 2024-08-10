@@ -1,18 +1,21 @@
-<div class="header-content">
-  <app-header></app-header>
-</div>
 <div class="content">
   <div class="nav-content">
     <app-nav [projects]="projects" (projectSelected)="onProjectSelected($event)"></app-nav>
   </div>
-  <div class="main-content">
 
-    <div class="form-content">
-      <app-form (add)="addTodoToList($event)"></app-form>
-    </div>
+  <div class="header-content">
+    <app-header></app-header>
+  </div>
 
-    <div class="todolist-content">
-      <app-todolist [todos]="todos"></app-todolist>
+  <div class="main-content-wrapper">
+    <div class="main-content">
+      <div class="form-content">
+        <app-form (add)="addTodoToList($event)"></app-form>
+      </div>
+      
+      <div class="todolist-content">
+        <app-todolist [todos]="todos"></app-todolist>
+      </div>
     </div>
   </div>
 </div>

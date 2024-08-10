@@ -60,20 +60,31 @@ export class NavComponent implements OnInit, OnDestroy {
     this.newProjectName = 'プロジェクト';
     this.editingProjectId = null;
     this.activeMenuProjectId = null;
-    this.setFocus(this.newProjectInput);
+
+    // setTimeoutを使ってフォーカスを設定
+    setTimeout(() => {
+        if (this.newProjectInput) {
+            this.renderer.selectRootElement(this.newProjectInput.nativeElement).focus();
+        }
+    }, 0);
   }
 
   addProject(): void {
-    if (this.newProjectName.trim()) {
-      const newProject: Project = {
-        id: this.projects.length + 1,
-        name: this.newProjectName,
-        sort_key: this.projects.length + 1
-      };
-      this.projects.push(newProject);
-      this.projectService.addProject(newProject);
-      this.resetProjectInput();
+    if (!this.isAddingProject || !this.newProjectName.trim()) {
+      return;
     }
+    
+    this.isAddingProject = false; // 追加中フラグをリセット
+    
+    const newProject: Project = {
+      id: this.projects.length + 1,
+      name: this.newProjectName,
+      sort_key: this.projects.length + 1
+    };
+
+    this.projects.push(newProject);
+    this.projectService.addProject(newProject);
+    this.resetProjectInput();
   }
 
   startEditingProject(event: Event, project: Project): void {

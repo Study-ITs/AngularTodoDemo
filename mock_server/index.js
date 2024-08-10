@@ -65,12 +65,18 @@ app.get('/projects', (req, res) => {
 
 // プロジェクトの追加
 app.post('/projects', (req, res) => {
-  const projects = fs.existsSync(PROJECT_FILE) ? JSON.parse(fs.readFileSync(PROJECT_FILE)) : [];
-  const newProject = { id: projects.length + 1, ...req.body };
-  projects.push(newProject);
-  fs.writeFileSync(PROJECT_FILE, JSON.stringify(projects, null, 2));
-  res.json(newProject);
-});
+    const projects = fs.existsSync(PROJECT_FILE) ? JSON.parse(fs.readFileSync(PROJECT_FILE)) : [];
+    
+    // 現在のプロジェクトの中で最大のIDを取得
+    const maxId = projects.reduce((max, project) => Math.max(max, project.id), 0);
+  
+    // 新しいプロジェクトのIDを設定
+    const newProject = { id: maxId + 1, ...req.body };
+  
+    projects.push(newProject);
+    fs.writeFileSync(PROJECT_FILE, JSON.stringify(projects, null, 2));
+    res.json(newProject);
+  });
 
 // プロジェクトの更新
 app.put('/projects/:id', (req, res) => {
