@@ -4,8 +4,12 @@ import { TodoComponent } from '../todo/todo.component';
 
 export interface Todo {
   id: number;
+  status_id: number;
+  project_id: number;
+  priority_id: number;
   title: string;
-  status: string;
+  start_date_time: string;
+  end_date_time: string;
 }
 
 @Component({
@@ -16,10 +20,5 @@ export interface Todo {
   styleUrl: './todolist.component.css'
 })
 export class TodolistComponent {
-  @Input() todos: Todo[] = [
-    { id: 1, title: 'やること アイテム1', status: 'Active' },
-    { id: 2, title: 'やること アイテム2', status: 'Inactive' },
-    { id: 3, title: 'やること アイテム3', status: 'Pending' },
-    { id: 4, title: 'やること アイテム4', status: 'Active' }
-  ];
+  @Input() todos: Todo[] = [];
 }

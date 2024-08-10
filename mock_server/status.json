@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "未設定",
+        "sort_key": 1
+    },
+    {
+        "id": 2,
+        "name": "未着手",
+        "sort_key": 2
+    },
+    {
+        "id": 3,
+        "name": "進行中",
+        "sort_key": 3
+    },
+    {
+        "id": 4,
+        "name": "保留中",
+        "sort_key": 4
+    },
+    {
+        "id": 5,
+        "name": "完了",
+        "sort_key": 5
+    }
+]

@@ -16,15 +16,6 @@
 }
 
 .todolist-content {
-    display: flex;
     margin-top: 32px;
     width: 100%;
-}
-
-.todolist-group {
-    flex: 16;
-}
-
-.todolist-group-margin {
-    flex: 1;
 }

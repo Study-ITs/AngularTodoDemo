@@ -1,9 +1,9 @@
 <div class="nav-frame">
-    <p>優先度ごと</p>
-    <p>時間ごと</p>
-    <p>ステータスごと</p>
+    <li *ngFor="let project of projects" (click)="selectProject(project.id)">
+        <p>{{ project.name }}</p>
+    </li>
     <div>
-        <p>+ カテゴリを追加</p>
+        <p>+ プロジェクト追加</p>
     </div>
 </div>
 

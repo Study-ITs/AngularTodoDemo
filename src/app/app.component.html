@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="content">
   <div class="nav-content">
-    <app-nav></app-nav>
+    <app-nav [projects]="projects" (projectSelected)="onProjectSelected($event)"></app-nav>
   </div>
   <div class="main-content">
 
@@ -10,21 +10,7 @@
     </div>
 
     <div class="todolist-content">
-      <div class="todolist-group">
-        <div style="margin-bottom: 20px;">
-          <app-todolist></app-todolist>
-        </div>
-        <div style="margin-bottom: 20px;">
-          <app-todolist></app-todolist>
-        </div>
-      </div>
-      <div class="todolist-group-margin"></div>
-      <div class="todolist-group">
-        <app-todolist [todos]="todos"></app-todolist>
-      </div>
+      <app-todolist [todos]="todos"></app-todolist>
     </div>
   </div>
 </div>
-
-
-

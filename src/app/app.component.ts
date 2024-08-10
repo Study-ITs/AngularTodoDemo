@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { ProjectService } from './project.service'; 
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent, Project } from './nav/nav.component';
 import { TodolistComponent, Todo } from './todolist/todolist.component';
 import { FormComponent } from './form/form.component';
 
@@ -13,16 +14,51 @@ import { FormComponent } from './form/form.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  todos: Todo[] = [
-    { id: 1, title: 'やること アイテム1', status: 'Active' },
-    { id: 2, title: 'やること アイテム2', status: 'Inactive' },
-    { id: 3, title: 'やること アイテム3', status: 'Pending' },
-    { id: 4, title: 'やること アイテム4', status: 'Active' }
-  ];
+  todos: Todo[] = [];
+  projects: Project[] = [];
+
+  constructor(private projectService: ProjectService) {}
+
+  title = 'angular-todo';
+
+  ngOnInit(): void {
+    this.fetchProjects();
+
+    this.projectService.selectedProjectId$.subscribe(projectId => {
+      if (projectId !== null) {
+        this.fetchTodos(projectId);
+      }
+    });
+  }
+
+  fetchTodos(projectId: number): void {
+    fetch(`http://localhost:3000/todos/project/${projectId}`)
+      .then(response => response.json())
+      .then(data => {
+        this.todos = data;
+      })
+      .catch(error => console.error('Error fetching todos:', error));
+  }
+
+  fetchProjects(): void {
+    fetch('http://localhost:3000/projects')
+      .then(response => response.json())
+      .then(data => {
+        this.projects = data;
+        console.log(this.projects);
+      })
+      .catch(error => console.error('Error fetching projects:', error));
+  }
+
+  onProjectSelected(projectId: number | null): void {
+    if (projectId !== null && projectId !== undefined) {
+      this.fetchTodos(projectId);
+    } else {
+      console.error('Invalid projectId:', projectId);
+    }
+  }
 
   addTodoToList(todo: Todo) {
     this.todos.push(todo);
   }
-  
-  title = 'angular-todo';
 }
