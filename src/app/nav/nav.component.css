@@ -28,4 +28,20 @@ h2 {
     background-color: #3f51b5;
     color: white;
 }
+
+.add-project {
+    cursor: pointer;
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.new-project-input {
+    width: calc(100% - 24px);
+    margin: 12px;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
   

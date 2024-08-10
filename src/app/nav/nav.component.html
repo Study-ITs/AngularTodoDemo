@@ -7,5 +7,22 @@
       (click)="selectProject(project.id)">
       {{ project.name }}
     </div>
-</div>
+  
+    <!-- プロジェクト追加ボタン -->
+    <div class="nav-item add-project" (click)="startAddingProject()" *ngIf="!isAddingProject">
+      + プロジェクト追加
+    </div>
+  
+    <!-- プロジェクト名入力フィールド -->
+    <div *ngIf="isAddingProject">
+      <input 
+        #newProjectInput
+        type="text" 
+        class="new-project-input" 
+        [(ngModel)]="newProjectName"
+        (blur)="onBlur()"
+        (keydown.enter)="addProject()"
+        placeholder="プロジェクト名を入力">
+    </div>
+  </div>
   

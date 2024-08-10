@@ -74,6 +74,19 @@ app.get('/projects', (req, res) => {
     res.json(projects);
 });
 
+// プロジェクトの追加
+app.post('/projects', (req, res) => {
+    const projects = fs.existsSync(PROJECT_FILE) ? JSON.parse(fs.readFileSync(PROJECT_FILE)) : [];
+    const newProject = {
+        id: projects.length + 1,
+        ...req.body
+    };
+    projects.push(newProject);
+    fs.writeFileSync(PROJECT_FILE, JSON.stringify(projects, null, 2));
+    res.json(newProject);
+});
+
+
 // idを指定してStatusのnameを取得
 app.get('/status/:id', (req, res) => {
     const statuses = JSON.parse(fs.readFileSync(STATUS_FILE));
